@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -23,6 +23,9 @@
 <a name="ancre"></a>
 
 <!-- CACHE -->
+
+
+<!-- -->
 <div class="cache"></div>
 
 <!-- HEADER -->
