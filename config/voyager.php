@@ -43,7 +43,7 @@ return [
     */
 
     'models' => [
-    //'namespace' => 'App\\',
+    'namespace' => 'App\\Http\\Models\\',
     ],
 
     /*
@@ -149,7 +149,8 @@ return [
         'widgets' => [
                   'TCG\\Voyager\\Widgets\\UserDimmer',
                   'TCG\\Voyager\\Widgets\\PostDimmer',
-                  'TCG\\Voyager\\Widgets\\PageDimmer',
+                  'App\\Widgets\\Ressources',
+                  'App\\Widgets\\Categories',
 
         ],
 
