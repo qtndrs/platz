@@ -9,8 +9,7 @@
 
 
 <!-- NAVBAR -->
-<!--@include('partials.nav')-->
-<?php echo menu('main'); ?>
+@include('partials.nav')
 
 
 <!-- PORTFOLIO -->
