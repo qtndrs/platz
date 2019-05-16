@@ -12,8 +12,8 @@
 	</dl>
 </a>
 	<div id="wrapper-part-info">
-		<div class="part-info-image"><img src="img/icon-themes.svg" alt="" width="28" height="28"/></div>
-		<div id="part-info">{{ $ressource -> categorie_id }}</div>
+		<div class="part-info-image"><img src="{{ asset('img/' . $ressource->categorie->icone) }}" alt="" width="28" height="28"/></div>
+		<div id="part-info">{{ $ressource ->categorie->nom }}</div>
 </div>
 </figure>
 @endforeach
