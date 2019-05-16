@@ -20,4 +20,4 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', 'RessourceController@index')->name('templates/homepage');
-Route::get('ressources/{id}', 'RessourceController@show')->name('ressources.show');
+Route::get('ressources/{id}', 'RessourceController@show');
