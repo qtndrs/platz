@@ -5,11 +5,11 @@
 
        class RessourceController extends Controller {
          public function index(){
-            $ressources = RessourcesMdl::orderBy('id');
-            return View::make('templates.homepage', compact ('ressources'));
+            $ressources = RessourcesMdl::orderBy('id', 'desc')->take(20)->get();
+            return View::make('ressources.index', compact ('ressources'));
          }
 
-         public function show($id){
+         public function show($id = 1){
             $ressource = RessourcesMdl::find($id);
             return View::make('ressources.show', compact ('ressource'));
          }

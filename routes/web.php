@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 View::composer('categories.index', function($view){
   $view->with('categories', App\Http\Models\Categorie::all());
 });
@@ -19,4 +20,4 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', 'RessourceController@index')->name('templates/homepage');
-Route::resource('ressources', 'RessourceController');
+Route::get('ressources/{id}', 'RessourceController@show')->name('ressources.show');
