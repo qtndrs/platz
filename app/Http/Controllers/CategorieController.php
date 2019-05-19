@@ -1,6 +1,7 @@
 <?php
        namespace App\Http\Controllers;
        use App\Http\Models\Categorie as CategoriesMdl;
+       use App\Http\Models\Ressource as Ressource;
        use Illuminate\Support\Facades\View;
 
        class CategorieController extends Controller {
@@ -11,7 +12,8 @@
 
          public function show($id){
             $categorie = CategoriesMdl::find($id);
-            return View::make('categories.show', compact ('categorie'));
+            $ressources = $categorie->ressource()->get();
+            return View::make('categories.show', compact ('categorie', 'ressources'));
          }
 
        }

@@ -15,6 +15,6 @@
         return $this->belongsTo('App\User');
        }
        public function categorie(){
-        return $this->belongsTo('App\Http\Models\Categorie');
+        return $this->belongsTo('App\Http\Models\Categorie', 'categorie_id');
        }
   }

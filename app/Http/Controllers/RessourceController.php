@@ -9,7 +9,7 @@
             return View::make('ressources.index', compact ('ressources'));
          }
 
-         public function show($id = 1){
+         public function show($id){
             $ressource = RessourcesMdl::find($id);
             return View::make('ressources.show', compact ('ressource'));
          }

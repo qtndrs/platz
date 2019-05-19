@@ -6,8 +6,6 @@
 <html>
 @include('partials.header')
 
-
-
 <!-- NAVBAR -->
 @include('partials.nav')
 
@@ -15,14 +13,12 @@
 <!-- PORTFOLIO -->
 
 @section('content')
-
 @show
 
 <!-- footer -->
   @include('partials.footer')
 <!-- /footer -->
 
-</div>
   <!-- script -->
   @include('partials.script')
   <!-- /script -->

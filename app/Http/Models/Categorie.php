@@ -8,4 +8,8 @@
          * @var string
          */
         protected $table = 'categories';
+
+      public function ressource(){
+         return $this->hasMany('App\Http\Models\Ressource');
+       }
    }

@@ -1,6 +1,7 @@
 {{--
 	resources/views/ressources/show.blade.php
 	 --}}
+
 @extends('templates.homepage')
 
 @section ('content')
@@ -23,27 +24,25 @@
 		</div>
 
 		<div class="wrapper-weight">
-			<div class="icon-weight"><img src="img/icon-weight.svg" alt="" width="20" height="23"/></div>
+			<div class="icon-weight"><img src="{{ asset('img/icon-weight.svg') }}" alt="" width="20" height="23"/></div>
 				<div class="text-weight">23 Mo</div>
 		</div>
 
 		<div class="wrapper-desc">
-			<div class="icon-desc"><img src="img/icon-desc.svg" alt="" width="24" height="24"/></div>
-				<div class="text-desc">{{ $ressource -> textSuite }}</div>
+			<div class="icon-desc"><img src="{{ asset('img/icon-desc.svg') }}" alt="" width="24" height="24"/></div>
+				<div class="text-desc">{{ $ressource -> texteSuite }}</div>
 		</div>
 
 		<div class="wrapper-download">
-			<div class="icon-download"><img src="img/icon-download.svg" alt="" width="19" height="26"/></div>
+			<div class="icon-download"><img src="{{ asset('img/icon-download.svg') }}" alt="" width="19" height="26"/></div>
 				<div class="text-download"><a href="#"><b>Download</b></a></div>
 		</div>
 									<!-- more from categorie -->
 		<div class="wrapper-morefrom">
 			<div class="text-morefrom">More from {{$ressource->categorie->nom}}</div>
 				<div class="image-morefrom">
-					<a href="#"><div class="image-morefrom-1"><img src="img/psd-1.jpg" alt="" width="430" height="330"/></div></a>
-						<a href="#"><div class="image-morefrom-2"><img src="img/psd-2.jpg" alt="" width="430" height="330"/></div></a>
-						<a href="#"><div class="image-morefrom-3"><img src="img/psd-3.jpg" alt="" width="430" height="330"/></div></a>
-						<a href="#"><div class="image-morefrom-4"><img src="img/psd-6.jpg" alt="" width="430" height="330"/></div></a>
+
+ 				@include('ressources.indexByCategorie')
 				</div>
 		</div>
 
