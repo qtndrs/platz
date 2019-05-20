@@ -2,6 +2,15 @@
 	resources/views/ressources/liste.blade.php
 	 --}}
 
+
+	 <div id="wrapper-container">
+
+	 	<div class="container object">
+
+	 		<div id="main-container-image">
+
+	 				<section class="work" id="ressource">
+
 @foreach ($ressources as $ressource)
 <figure class="white">
 <a href="{{route('ressource', ['id' => $ressource->id])}}">
@@ -17,3 +26,11 @@
 </div>
 </figure>
 @endforeach
+
+			</section>
+
+		</div>
+{{ $ressources->links()}}
+	</div>
+
+</div>

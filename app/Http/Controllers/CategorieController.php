@@ -3,6 +3,7 @@
        use App\Http\Models\Categorie as CategoriesMdl;
        use App\Http\Models\Ressource as Ressource;
        use Illuminate\Support\Facades\View;
+       use Illuminate\Pagination\Paginator;
 
        class CategorieController extends Controller {
          public function index(){
@@ -12,7 +13,7 @@
 
          public function show($id){
             $categorie = CategoriesMdl::find($id);
-            $ressources = $categorie->ressource()->get();
+            $ressources = $categorie->ressource()->simplePaginate(8);
             return View::make('categories.show', compact ('categorie', 'ressources'));
          }
 

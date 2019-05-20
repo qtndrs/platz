@@ -17,3 +17,27 @@
 	@else
 	<script src="{{asset('js/show.js')}}"></script>
 	@endif
+
+	<script type="text/javascript">
+
+	$(function() {
+	    $('body').on('click', '.pagination a', function(e) {
+	        e.preventDefault();
+
+	        var url = $(this).attr('data-url');
+	        getRessources(url);
+	        window.history.pushState("", "", url);
+	    });
+
+	    function getRessources(url) {
+	        $.ajax({
+	            url : url,
+	        }).done(function (data) {
+	            $('.work').html(data);
+	        }).fail(function () {
+	            alert('Articles could not be loaded.');
+	        });
+	    }
+	});
+
+	</script>
