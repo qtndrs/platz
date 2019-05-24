@@ -27,7 +27,6 @@ View::composer('ressources.indexByCategorie', function( $view){
   });
 
 
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
@@ -35,3 +34,5 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', 'RessourceController@index')->name('templates.homepage');
 Route::get('ressources/{id}', 'RessourceController@show')->name('ressource');
 Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');
+Route::get('/search}', 'RessourceController@search')->name('search');
+Route::get('/download}', 'RessourceController@download')->name('download_url');

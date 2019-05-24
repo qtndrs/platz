@@ -16,6 +16,8 @@
 	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
 	@elseif(Route::currentRouteName() == 'categorie')
 	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
+	@elseif(Route::currentRouteName() == 'search')
+	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
 	@else
 	<link href="{{URL::asset('show.css')}}" rel="stylesheet">
 	@endif
@@ -28,9 +30,10 @@
 <!-- HEADER -->
 <div id="wrapper-header">
 	<div id="main-header" class="object">
-		<div class="logo"><img src="{{ asset('img/logo-burst.png') }}" alt="logo platz" height="38" width="90"></div>
+		<div class="logo"> <a href="{{ route('templates.homepage') }}"><img src="{{ asset('img/logo-burst.png') }}" alt="logo platz" height="38" width="90"></a> </div>
         <div id="main_tip_search">
-			<form><input type="text" name="search" id="tip_search_input" list="search" autocomplete=off required>
+			<form action ="{{ route('search') }}"  method="get">
+				<input type="text" name="search" id="tip_search_input" list="search" autocomplete=off required>
 			</form>
 		</div>
         <div id="stripes"></div>

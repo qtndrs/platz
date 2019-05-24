@@ -40,9 +40,7 @@ return [
     | Supported Drivers: "local", "ftp", "sftp", "s3", "rackspace"
     |
     */
-
     'disks' => [
-
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

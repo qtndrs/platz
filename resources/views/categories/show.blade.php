@@ -1,5 +1,5 @@
 {{--
-	resources/views/ressources/show.blade.php
+	resources/views/categories/show.blade.php
 	 --}}
 
 	 @extends('templates/homepage')
@@ -18,7 +18,7 @@
 	 		<div id="main-container-image">
 
 	 				<section class="work">
-	 	@include('ressources.liste')
+	 	@include('ressources.index')
 	 				</section>
 
 	 		</div>
