@@ -136,7 +136,7 @@ return [
                 'icon_class' => 'voyager-person',
             ],
             'voyager::generic.home' => [
-                'route'        => '/',
+                'route'        => 'app_homepage',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],

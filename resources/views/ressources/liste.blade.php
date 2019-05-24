@@ -3,13 +3,7 @@
 	 --}}
 
 
-	 <div id="wrapper-container">
 
-	 	<div class="container object">
-
-	 		<div id="main-container-image">
-
-	 				<section class="work" id="ressource">
 
 @foreach ($ressources as $ressource)
 <figure class="white">
@@ -26,11 +20,3 @@
 </div>
 </figure>
 @endforeach
-
-			</section>
-
-		</div>
-{{ $ressources->links()}}
-	</div>
-
-</div>

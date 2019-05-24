@@ -11,6 +11,7 @@
             return View::make('templates.homepage', compact ('categories'));
          }
 
+
          public function show($id){
             $categorie = CategoriesMdl::find($id);
             $ressources = $categorie->ressource()->simplePaginate(8);

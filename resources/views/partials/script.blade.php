@@ -11,6 +11,7 @@
 	<script type="text/javascript" src="{{asset('js/fastclick.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.animate-colors-min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.animate-shadow-min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/add.js')}}"></script>
 
 	@if ( Request::is('/') OR Request::is('categorie/'))
 	<script src="{{asset('js/main.js')}}"></script>
@@ -20,24 +21,46 @@
 
 	<script type="text/javascript">
 
-	$(function() {
-	    $('body').on('click', '.pagination a', function(e) {
-	        e.preventDefault();
+	$(window).on('hashchange', function() {
+        if (window.location.hash) {
+            var page = window.location.hash.replace('#', '');
+            if (page == Number.NaN || page <= 0) {
+                return false;
+            }else{
+                retriveMembers(page);
+            }
+        }
+    });
 
-	        var url = $(this).attr('data-url');
-	        getRessources(url);
-	        window.history.pushState("", "", url);
-	    });
+    $(document).ready(function()
+    {
+        $(document).on('click', '.pagination a',function(event)
+        {
+            event.preventDefault();
 
-	    function getRessources(url) {
-	        $.ajax({
-	            url : url,
-	        }).done(function (data) {
-	            $('.work').html(data);
-	        }).fail(function () {
-	            alert('Articles could not be loaded.');
-	        });
-	    }
-	});
+            $('li').removeClass('active');
+            $(this).parent('li').addClass('active');
+
+            var liveurl = $(this).attr('href');
+            var page=$(this).attr('href').split('page=')[1];
+
+            retriveMembers(page);
+        });
+
+    });
+
+    function retriveMembers(page){
+        $.ajax(
+        {
+            url: '?page=' + page,
+            type: "get",
+            datatype: "html"
+        }).done(function(data){
+            $(".work").empty().html(data);
+            location.hash = page;
+        }).fail(function(jqXHR, ajaxOptions, thrownError){
+              alert('Sorry, No response from server');
+        });
+    }
 
 	</script>

@@ -27,12 +27,11 @@ View::composer('ressources.indexByCategorie', function( $view){
   });
 
 
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('add', 'CommentaireController@addCommentaire');
 Route::get('/', 'RessourceController@index')->name('templates.homepage');
-//Route::resource('ressources', 'RessourceController');
 Route::get('ressources/{id}', 'RessourceController@show')->name('ressource');
 Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');
