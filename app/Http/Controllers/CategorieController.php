@@ -12,7 +12,7 @@
 
          public function show($id){
             $categorie = CategoriesMdl::find($id);
-            $ressources = $categorie->ressource()->get();
+            $ressources = $categorie->ressource()->paginate(20);
             return View::make('categories.show', compact ('categorie', 'ressources'));
          }
 

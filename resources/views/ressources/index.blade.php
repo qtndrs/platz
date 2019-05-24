@@ -24,6 +24,6 @@ Liste des ressources
 		</div>
 
 	</div>
-
+	{{$ressources->links()}}
 </div>
 @stop
