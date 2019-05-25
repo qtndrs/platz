@@ -38,9 +38,6 @@
         {
             event.preventDefault();
 
-            $('li').removeClass('active');
-            $(this).parent('li').addClass('active');
-
             var liveurl = $(this).attr('href');
             var page=$(this).attr('href').split('page=')[1];
 
