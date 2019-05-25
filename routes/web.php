@@ -26,6 +26,17 @@ View::composer('ressources.indexByCategorie', function( $view){
                   ->get());
   });
 
+View::composer('ressources.show', function( $view){
+      $currentRoute = Route::current();
+      $id = $currentRoute->parameters()['id'];
+      $ressource = App\Http\Models\Ressource::find($id);
+      $commentaires = $ressource->commentaires;
+      $view->with('commentaires', App\Http\Models\Commentaire::orderBy('created_at', 'DESC')
+                  ->where('id', '=', $ressource->id)
+                  ->limit(4)
+                  ->get());
+  });
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
