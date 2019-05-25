@@ -8,12 +8,7 @@
 
        class RessourceController extends Controller {
          public function index(Request $request){
-            $ressources = RessourcesMdl::simplePaginate();
-
-            if ($request->ajax()) {
-                        return view('ressources.liste', compact ('ressources'));
-                    }
-
+            $ressources = RessourcesMdl::simplePaginate(2);
             return View::make('ressources.index', compact ('ressources'));
          }
 
@@ -22,5 +17,6 @@
             $commentaires = $ressource->commentaire('created_at', 'DESC');
             return View::make('ressources.show', compact ('ressource', 'commentaires'));
          }
+
 
        }

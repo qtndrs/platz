@@ -11,6 +11,10 @@
 |
 */
 
+View::composer('ressources.show', function( $view){
+  $view->with('commentaires', App\Http\Models\Commentaire::all());
+});
+
 View::composer('categories.index', function( $view){
   $view->with('categories', App\Http\Models\Categorie::all());
 });
@@ -26,22 +30,19 @@ View::composer('ressources.indexByCategorie', function( $view){
                   ->get());
   });
 
-View::composer('ressources.show', function( $view){
+/* View::composer('ressources.show', function( $view){
       $currentRoute = Route::current();
       $id = $currentRoute->parameters()['id'];
       $ressource = App\Http\Models\Ressource::find($id);
       $commentaires = $ressource->commentaires;
       $view->with('commentaires', App\Http\Models\Commentaire::orderBy('created_at', 'DESC')
                   ->where('id', '=', $ressource->id)
-                  ->limit(4)
                   ->get());
-  });
-
+  }); */
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
 
 Route::get('/', 'RessourceController@index')->name('templates.homepage');
 Route::get('ressources/{id}', 'RessourceController@show')->name('ressource');

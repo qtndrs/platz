@@ -23,7 +23,7 @@ Liste des ressources
 			</section>
 
 	</div>
-{!! $ressources->render() !!}
+ {{ $ressources->links('partials.paginator', ['ressources'=>$ressources]) }}
 	</div>
 
 </div>
