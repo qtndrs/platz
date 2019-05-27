@@ -12,7 +12,7 @@
        protected $table = 'commentaires';
 
        public function ressource(){
-        return $this->belongsTo('App\Http\Models\Ressource', 'ressource_id');
+        return $this->belongsTo('App\Http\Models\Ressource');
        }
 
        public function user(){

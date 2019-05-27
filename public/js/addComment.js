@@ -8,7 +8,7 @@
          e.preventDefault();
 
          $.ajax({
-             url:'/ajax/add',
+             url:'ajax/add',
              data:{
                  texte: $('#body').val(),
                  ressource: $('#ressource').val(),

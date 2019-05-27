@@ -4,7 +4,8 @@
 
 
 
-          $('#btn').on('click', function(){
+          $(document).on('submit', '#contact' ,function(e){
+              e.preventDefault();
               if($('#body').val()==''){
                   alert("Ecrivez d'abord un commentaire.");
               }
@@ -12,18 +13,16 @@
                   var commentForm = $('#contact').serialize();
                   $.ajax({
                       method: 'GET',
-                      url: 'add/comment',
+                      url: $(this).attr('action'),
                       data: commentForm,
                       success: function(reponsePHP){
                         $('.liste').prepend(reponsePHP)
                               .find('.post-reply').first()
                               .hide()
                               .slideDown();
-        M.toast({html: "Votre commentaire est bien ajouté !"});
                       }
                   });
               }
 
 
 });
-  });

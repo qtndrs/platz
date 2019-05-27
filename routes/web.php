@@ -11,9 +11,14 @@
 |
 */
 
-View::composer('ressources.show', function( $view){
-  $view->with('commentaires', App\Http\Models\Commentaire::all());
+View::composer('ressources.show', function($view){
+  $currentRoute = Route::current();
+  $id = $currentRoute->parameters()['id'];
+  $ressource = App\Http\Models\Ressource::find($id);
+  $commentaires = $ressource->commentaire;
+  $view->with('commentaires', App\Http\Models\Commentaire::where('commentaire', $commentaires));
 });
+
 
 View::composer('categories.index', function( $view){
   $view->with('categories', App\Http\Models\Categorie::all());
@@ -34,16 +39,16 @@ View::composer('ressources.indexByCategorie', function( $view){
       $currentRoute = Route::current();
       $id = $currentRoute->parameters()['id'];
       $ressource = App\Http\Models\Ressource::find($id);
-      $commentaires = $ressource->commentaires;
-      $view->with('commentaires', App\Http\Models\Commentaire::orderBy('created_at', 'DESC')
-                  ->where('id', '=', $ressource->id)
-                  ->get());
-  }); */
+      $commentaires = $ressource->commentaire;
+      $view->with('commentaires', App\Http\Models\Commentaire::where('commentaires', $commentaires));
+  });
+*/
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('ressources/add/comment', 'CommentaireController@addComment')->name('addComment');
 Route::get('/', 'RessourceController@index')->name('templates.homepage');
 Route::get('ressources/{id}', 'RessourceController@show')->name('ressource');
 Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');

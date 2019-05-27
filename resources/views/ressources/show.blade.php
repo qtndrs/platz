@@ -58,10 +58,9 @@
 
 	<!-- comment with ajax -->
 						<div class="liste">
-							<?php foreach ($commentaires as $commentaire): ?>
+							<?php foreach ($ressource->commentaire as $commentaire): ?>
 								<div class="post-reply">
 										<div class="image-reply-post"></div>
-										<div class="name-reply-post">{{$commentaire->user->nom}}</div>
 										<div class="text-reply-post">{{$commentaire->texte}}</div>
 								</div>
 							<?php endforeach; ?>
