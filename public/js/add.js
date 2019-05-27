@@ -4,7 +4,7 @@
 
 
 
-          $(document).on('submit', '#contact' ,function(){
+          $('#btn').on('click', function(){
               if($('#body').val()==''){
                   alert("Ecrivez d'abord un commentaire.");
               }
