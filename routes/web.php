@@ -47,3 +47,4 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', 'RessourceController@index')->name('templates.homepage');
 Route::get('ressources/{id}', 'RessourceController@show')->name('ressource');
 Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');
+Route::get('/ajax/add', 'CommentaireController@show')->name('add');
