@@ -5,7 +5,7 @@
 	 <div class="post-send">
                     <div id="main-post-send">
                         <div id="title-post-send">Add your comment</div>
-                        <form id="contact" method="get" action="{{route('add')}}">
+                        <form id="contact" method="post" action="{{route('add')}}">
                             <input name="_token" type="hidden" value="{{ csrf_token() }}">
                             <input id="user" name="user" type="hidden" value="2">
                             <input id="ressource" name="ressource" type="hidden" value="{{$ressource->id}}">

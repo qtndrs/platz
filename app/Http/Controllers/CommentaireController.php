@@ -8,19 +8,12 @@ class CommentaireController extends Controller{
 
     public function addComment(Request $request)
     {
-    	try{
-	        $commentaire = new Commentaire;
-	        $commentaire->texte = $request->input('body');
-	        $commentaire->user_id = $request->input('user');
-	        $commentare->ressource_id = $request->input('ressource');
 
-	        $commentaire->save();
-	        return $commentaire;
-	    }
-	    catch(\Exception $e){
-			// do task when error
-			 $e->getMessage();   // insert query
-	    }
-    }
+      if($request->$ajax())
+      {
+          return "True request!";
+      }
+}
+  
 
 }
