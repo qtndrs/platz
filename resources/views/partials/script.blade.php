@@ -3,9 +3,10 @@
 	 --}}
 
 <!-- SCRIPT -->
-
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{{asset('js/addComment.js')}}"></script>
+
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script type="text/javascript" src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.localScroll.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery-animate-css-rotate-scale.js')}}"></script>
@@ -20,25 +21,11 @@
 	<script src="{{asset('js/show.js')}}"></script>
 	@endif
 
-	<script >
-	$(function () {
-			$(document).on('submit','#contact' ,function(e){
-					e.preventDefault();
-					 var commentForm = $('#contact').serialize();
-					$.ajax({
-							url:'/ajax/add',
-							data:commentForm
 
-									//ressource: $('#ressource').val(),
-									//user: $('#user').val()
-									,
-							method: 'post',
-							success: function(reponsePHP) {
-									alert(reponsePHP);
-
-
-							}
-					})
-			});
-	});
-	</script>
+							<!-- newsletter msg  -->
+	@if (\Session::has('success'))
+	<script> toastr.success("{{ Session::get('success') }}");</script>
+	@endif
+	@if (\Session::has('failure'))
+	<script> toastr.error("{{ Session::get('failure') }}");</script>
+	@endif
