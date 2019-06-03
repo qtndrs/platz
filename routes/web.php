@@ -11,13 +11,6 @@
 |
 */
 
-View::composer('ressources.show', function($view){
-  $currentRoute = Route::current();
-  $id = $currentRoute->parameters()['id'];
-  $ressource = App\Http\Models\Ressource::find($id);
-  $commentaires = $ressource->commentaire;
-  $view->with('commentaires', App\Http\Models\Commentaire::where('commentaire', $commentaires));
-});
 
 
 View::composer('categories.index', function( $view){

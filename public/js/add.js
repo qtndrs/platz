@@ -14,7 +14,7 @@
                         if (reponsePHP == 1) {
                           var code = "<div class=\"post-reply\">\n\
                               					<div class=\"image-reply-post\"></div>\n\
-                              					<div class=\"name-reply-post\">"+$('#user').val()+"</div>\n\
+                              				  <div class=\"name-reply-post\">"+$('#user').val()+"</div>\n\
                               					<div class=\"text-reply-post\">"+$('#body').val()+"</div>\n\
                                 			</div>";
                           $('#liste').prepend(code).find('.post-reply:first').hide().slideDown();

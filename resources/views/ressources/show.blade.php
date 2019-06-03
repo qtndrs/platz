@@ -61,7 +61,7 @@
 		<?php foreach ($ressource->commentaire as $commentaire): ?>
 			<div class="post-reply">
 					<div class="image-reply-post"></div>
-					<div class="name-reply-post">{{$commentaire->user_id}}</div>
+					<div class="name-reply-post">{{$commentaire->user->name}}</div>
 					<div class="text-reply-post">{{$commentaire->texte}}</div>
 			</div>
 		<?php endforeach; ?>
