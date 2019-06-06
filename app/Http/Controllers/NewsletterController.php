@@ -8,14 +8,15 @@ use Newsletter;
 class NewsLetterController extends Controller
 {
 
-    public function store(Request $request)
-    {
-        if ( ! Newsletter::isSubscribed($request->email) )
+    public function store(Request $request){
+    return "coucou php ";
+
+        /*if ( ! Newsletter::isSubscribed($request->email) )
         {
             Newsletter::subscribe($request->email);
-            return redirect('/')->with('success', 'Thanks For Subscribe');
+          return 1;
         }
-        return redirect('/')->with('failure', 'Sorry! You have already subscribed ');
+        return 0;*/
 
     }
 }

@@ -50,4 +50,5 @@ Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');
 Route::post('/ajax/add', 'CommentaireController@addComment')->name('add');
 
 //Route::get('newsletter','NewsletterController@create');
-Route::post('/','NewsletterController@store');
+
+Route::post('newsletter/store','NewsletterController@store')->name('store');

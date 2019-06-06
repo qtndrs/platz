@@ -24,8 +24,8 @@
 			<div id="main_tip_newsletter">
 				{{--	--}}
 
-					<form method="post" action="{{url('/')}}">
-						@csrf
+					<form method="post" action="{{url('newsletter/store')}}">
+				{!! csrf_field() !!}
 					<input type="text" name="email" id="tip_newsletter_input" list="newsletter" autocomplete=off required>
 				</form>
 			</div>

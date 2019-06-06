@@ -1,5 +1,12 @@
 {{--
 	resources/views/partials/script.blade.php
+
+	@if (\Session::has('success'))
+	<script> toastr.success("{{ Session::get('success') }}");</script>
+	@endif
+	@if (\Session::has('failure'))
+	<script> toastr.error("{{ Session::get('failure') }}");</script>
+	@endif
 	 --}}
 
 <!-- SCRIPT -->
@@ -13,6 +20,7 @@
 	<script type="text/javascript" src="{{asset('js/fastclick.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.animate-colors-min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.animate-shadow-min.js')}}"></script>
+
 	@yield('script')
 
 	@if ( Request::is('/') OR Request::is('categorie/'))
@@ -20,12 +28,43 @@
 	@else
 	<script src="{{asset('js/show.js')}}"></script>
 	@endif
-
+	<script type="text/javascript">
+	$.ajaxSetup({
+	    headers: {
+	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	    }
+	});
+	</script>
 
 							<!-- newsletter msg  -->
-	@if (\Session::has('success'))
-	<script> toastr.success("{{ Session::get('success') }}");</script>
-	@endif
-	@if (\Session::has('failure'))
-	<script> toastr.error("{{ Session::get('failure') }}");</script>
-	@endif
+
+
+						<script>
+						$(function(){
+
+							$.ajaxSetup({
+																			 headers: {
+																			 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+																			 }
+																			 });
+
+							$('#tip_newsletter_input').on("keydown", function(e){
+
+							    // 13 is the key code for the Enter key
+							    if(e.keyCode === 13){
+							        e.preventDefault();
+											$.ajax({
+
+
+												url: $(this).attr('action'),
+													method: 'post',
+						              success: function(responsePHP){
+														alert(responsePHP);
+
+							    }
+							});
+							}
+							});
+
+						});
+						</script>
