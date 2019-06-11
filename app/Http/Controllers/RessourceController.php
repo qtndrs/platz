@@ -8,9 +8,10 @@
 
        class RessourceController extends Controller {
          public function index(Request $request){
-            $ressources = RessourcesMdl::simplePaginate(2);
+            $ressources = RessourcesMdl::simplePaginate(6);
             return View::make('ressources.index', compact ('ressources'));
          }
+
 
          public function show($id){
             $ressource = RessourcesMdl::find($id);

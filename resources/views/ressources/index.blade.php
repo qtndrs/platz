@@ -1,5 +1,6 @@
 {{--
 	resources/views/ressources/index.blade.php
+	{{ $ressources->links('partials.paginator', ['ressources'=>$ressources]) }}
 	 --}}
 
 @extends('templates/homepage')
@@ -16,15 +17,15 @@ Liste des ressources
 
  <div class="container object">
 
-	 <div id="main-container-image">
+	 <div id="main-container-image ">
 
 			 <section class="work" id="ressource">
-	@include('ressources.liste')
+					 		@include('ressources.liste')
 			</section>
 
 	</div>
- {{ $ressources->links('partials.paginator', ['ressources'=>$ressources]) }}
 	</div>
 
 </div>
+
 @stop

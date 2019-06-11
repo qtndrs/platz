@@ -30,16 +30,6 @@ View::composer('ressources.indexByCategorie', function( $view){
                   ->get());
   });
 
-/* View::composer('ressources.show', function( $view){
-      $currentRoute = Route::current();
-      $id = $currentRoute->parameters()['id'];
-      $ressource = App\Http\Models\Ressource::find($id);
-      $commentaires = $ressource->commentaires;
-      $view->with('commentaires', App\Http\Models\Commentaire::orderBy('created_at', 'DESC')
-                  ->where('id', '=', $ressource->id)
-                  ->get());
-  }); */
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
@@ -52,3 +42,5 @@ Route::post('/ajax/add', 'CommentaireController@addComment')->name('add');
 //Route::get('newsletter','NewsletterController@create');
 
 Route::post('newsletter/store','NewsletterController@store')->name('store');
+
+Route::get('/fetch_data', 'RessourceController@fetch_data');
