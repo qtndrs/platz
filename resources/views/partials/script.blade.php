@@ -9,8 +9,8 @@
 	@endif
 	 --}}
 
-<!-- SCRIPT -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- SCRIPT-->
+	<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/addComment.js')}}"></script>
 
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -38,17 +38,17 @@
 	});
 	</script>
 
-							<!-- newsletter msg  -->
+							<!-- newsletter msg
 
 
 						<script>
 						$(function(){
 
 							$.ajaxSetup({
-																			 headers: {
-																			 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-																			 }
-																			 });
+											 headers: {
+											 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+											 }
+											 });
 
 							$('#tip_newsletter_input').on("keydown", function(e){
 
@@ -70,3 +70,4 @@
 
 						});
 						</script>
+						 -->
