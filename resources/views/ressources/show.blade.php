@@ -66,7 +66,16 @@
 			</div>
 		<?php endforeach; ?>
 	</div>
-						@include('commentaires.add')
+	<?php if (Auth::check()): ?>
+		@include('commentaires.add')
+	<?php else: ?>
+		<div class="post-send">
+                     <div id="main-post-send">
+                         Vous devez être connecté pour pouvoir poster un commentaire. <a href="{{ route('login')}}" style="color:#007bff;">Login</a><a href="{{ route('register')}}" style="color:#007bff;">Register</a>
+                     </div>
+                 </div>
+             </div>
+	<?php endif; ?>
 </div>
 
 @stop

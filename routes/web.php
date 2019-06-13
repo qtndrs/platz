@@ -11,6 +11,8 @@
 |
 */
 
+// Authentication routes...
+Route::auth();
 
 
 View::composer('categories.index', function( $view){
