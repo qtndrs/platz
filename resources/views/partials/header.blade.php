@@ -34,7 +34,7 @@
 	<div id="main-header" class="object">
 		<div class="logo"> <a href="{{ route('templates.homepage') }}"><img src="{{ asset('img/logo-burst.png') }}" alt="logo platz" height="38" width="90"></a> </div>
         <div id="main_tip_search">
-			<form action ="{{ route('search') }}"  method="get">
+			<form action ="#"  method="get">
 				<input type="text" name="search" id="tip_search_input" list="search" autocomplete=off required>
 			</form>
 				</div>
@@ -43,6 +43,6 @@
 		<div id="main-header" class="object">
 
 
-			
+
 		</div>
 </div>

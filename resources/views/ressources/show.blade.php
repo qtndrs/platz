@@ -35,7 +35,7 @@
 
 		<div class="wrapper-download">
 			<div class="icon-download"><img src="{{ asset('img/icon-download.svg') }}" alt="" width="19" height="26"/></div>
-				<div class="text-download"><a href="{{ route('download_url') }}"  ><b>Download</b></a></div>
+				<div class="text-download"><a href="#"  ><b>Download</b></a></div>
 		</div>
 									<!-- more from categorie -->
 		<div class="wrapper-morefrom">
