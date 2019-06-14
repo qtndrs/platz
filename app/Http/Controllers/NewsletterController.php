@@ -5,18 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Newsletter;
 
-class NewsLetterController extends Controller
+class NewsletterController extends Controller
 {
 
-    public function store(Request $request){
-    return "coucou php ";
-
-        /*if ( ! Newsletter::isSubscribed($request->email) )
+    public function store(Request $request)
+    {
+        if ( ! Newsletter::isSubscribed($request->email) )
         {
             Newsletter::subscribe($request->email);
-          return 1;
+            return redirect('/')->with('success', 'Thanks For Subscribe');
         }
-        return 0;*/
+        return redirect('/')->with('failure', 'Sorry! You have already subscribed ');
 
     }
 }

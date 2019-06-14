@@ -39,8 +39,4 @@ Route::get('ressources/{id}', 'RessourceController@show')->name('ressource');
 Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');
 Route::post('/ajax/add', 'CommentaireController@addComment')->name('add');
 
-//Route::get('newsletter','NewsletterController@create');
-
-Route::post('newsletter/store','NewsletterController@store')->name('store');
-
-Route::get('/fetch_data', 'RessourceController@fetch_data');
+Route::post('/','NewsletterController@store');
