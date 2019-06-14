@@ -32,7 +32,12 @@
         <div id="main_tip_search">
 			<form><input type="text" name="search" id="tip_search_input" list="search" autocomplete=off required>
 			</form>
-		</div>
+				</div>
         <div id="stripes"></div>
     </div>
+		<div id="main-header" class="object">
+
+
+			
+		</div>
 </div>
