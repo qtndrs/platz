@@ -1534,6 +1534,7 @@ var MENUSIDECLOSE = document.getElementById('cross-menu');
 
 MENUSIDECLOSE.addEventListener('click', function() {
 			   $("#main-container-menu").stop().animate({'left':'-100%'},300);
+				 {passive: true};
 });
 
 /* BOUTON MENU ARROW-2 */

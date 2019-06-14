@@ -37,3 +37,5 @@ Route::get('ressources/add/comment', 'CommentaireController@addComment')->name('
 Route::get('/', 'RessourceController@index')->name('templates.homepage');
 Route::get('ressources/{id}', 'RessourceController@show')->name('ressource');
 Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');
+
+Route::post('/','NewsletterController@store');

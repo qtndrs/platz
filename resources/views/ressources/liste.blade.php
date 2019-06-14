@@ -1,5 +1,7 @@
 {{--
 	resources/views/ressources/liste.blade.php
+
+
 	 --}}
 
 
@@ -20,3 +22,7 @@
 </div>
 </figure>
 @endforeach
+
+
+
+	{{ $ressources->links('partials.paginator', ['ressources'=>$ressources]) }}

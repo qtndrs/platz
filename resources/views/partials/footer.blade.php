@@ -3,6 +3,7 @@
 	 --}}
 
 <div id="main-container-footer">
+
 	<div class="container-footer">
 
 					<div id="row-1f">
@@ -23,8 +24,11 @@
 
 
 			<div id="main_tip_newsletter">
-				<form>
-					<input type="text" name="newsletter" id="tip_newsletter_input" list="newsletter" autocomplete=off required>
+				{{--	--}}
+
+					<form method="post" action="{{url('/')}}">
+						@csrf
+					<input type="text" name="email" id="tip_newsletter_input" list="newsletter" autocomplete=off required>
 				</form>
 			</div>
 					</div>

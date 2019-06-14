@@ -8,7 +8,11 @@
 
        class RessourceController extends Controller {
          public function index(Request $request){
-            $ressources = RessourcesMdl::simplePaginate(2);
+            $ressources = RessourcesMdl::simplePaginate(6);
+            if ($request->ajax()) {
+            return view('ressources.liste', ['ressources' => $ressources])->render();
+        }
+
             return View::make('ressources.index', compact ('ressources'));
          }
 
