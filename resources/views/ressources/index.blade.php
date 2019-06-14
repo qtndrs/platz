@@ -1,6 +1,5 @@
 {{--
 	resources/views/ressources/index.blade.php
-	{{ $ressources->links('partials.paginator', ['ressources'=>$ressources]) }}
 	 --}}
 
 @extends('templates/homepage')

@@ -12,7 +12,6 @@
 						   url:$(this).attr('data-url'),
 						   success:function(responsePHP)
 						   {
-								//alert("coucou");
 						    $('#ressource').html(responsePHP);
 						   }
 						  });
