@@ -11,6 +11,9 @@
 	<script type="text/javascript" src="{{asset('js/fastclick.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.animate-colors-min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.animate-shadow-min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/add.js')}}"></script>
+	
+	@yield('script')
 
 	@if ( Request::is('/'))
 	<script src="{{asset('js/main.js')}}"></script>

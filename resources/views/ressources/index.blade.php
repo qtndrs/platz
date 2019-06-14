@@ -10,20 +10,21 @@ Liste des ressources
 
 @stop
 
+
 @section('content')
 <div id="wrapper-container">
 
-	<div class="container object">
+ <div class="container object">
 
-		<div id="main-container-image">
+	 <div id="main-container-image">
 
-				<section class="work">
+			 <section class="work" id="ressource">
 	@include('ressources.liste')
-				</section>
-
-		</div>
+			</section>
 
 	</div>
-	{{$ressources->links()}}
+ {{ $ressources->links('partials.paginator', ['ressources'=>$ressources]) }}
+	</div>
+
 </div>
 @stop

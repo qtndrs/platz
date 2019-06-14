@@ -20,6 +20,8 @@
 					<div id="row-4f">
 						<div class="text-row-4f"><span style="font-weight:600;font-size:15px;color:#666;line-height:250%;text-transform:uppercase;letter-spacing:1.5px;">Newsletter</span><br>You will be informed monthly about the latest content avalaible.</div>
 
+
+
 			<div id="main_tip_newsletter">
 				<form>
 					<input type="text" name="newsletter" id="tip_newsletter_input" list="newsletter" autocomplete=off required>
@@ -29,6 +31,25 @@
 
 	</div>
 </div>
+
+<div id="administration">
+	<a href="{{route('voyager.login')}}">
+Administration
+	</a>
+</div>
+
+<style media="screen">
+	#administration {
+		text-align: center;
+	}
+	#administration a {
+		font-size: 20px; height: 40px; line-height: 40px;	opacity: 0.5;	cursor: pointer; color: #666;	opacity: 1;
+	}
+	#administration a:hover {
+		color: red;
+	}
+
+</style>
 
 <div id="wrapper-copyright">
 <div class="copyright">

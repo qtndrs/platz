@@ -1,6 +1,7 @@
 <?php
   namespace App\Http\Models;
   use App\Http\Models\Categorie;
+  use App\Http\Models\Commentaire;
   use App\User ;
   use Illuminate\Database\Eloquent\Model;
 
@@ -17,4 +18,7 @@
        public function categorie(){
         return $this->belongsTo('App\Http\Models\Categorie', 'categorie_id');
        }
+       public function commentaire(){
+        return $this->hasMany('App\Http\Models\Commentaire');
+      }
   }

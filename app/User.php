@@ -36,4 +36,13 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function ressources() {
+       return $this->hasMany('App\Http\Models\Ressource');
+   }
+
+   public function commentaires()
+   {
+       return $this->hasMany('App\Http\Models\Commentaire');
+   }
 }

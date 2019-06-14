@@ -3,18 +3,44 @@
 	 --}}
 
 	 <div id="wrapper-oldnew">
-		 <div class="oldnew">
-				 <div class="wrapper-oldnew-prev">
-						 <div id="oldnew-prev"></div>
-				 </div>
-					 <div class="wrapper-oldnew-next">
-						 <div id="oldnew-next"></div>
-			 </div>
-			 </div>
-	 </div>
+        <div class="oldnew">
 
-	 <div id="wrapper-thank">
-			 <div class="thank">
-					 <div class="thank-text">pl<span style="letter-spacing:-5px;">a</span>tz</div>
-			 </div>
-	 </div>
+            <!-- Previous Page Link -->
+            <div class="wrapper-oldnew-prev">
+            @if ($ressources->onFirstPage())
+                <div class="disabled" id="oldnew-prev"></div>
+            @else
+                <a href="{{ $ressources->previousPageUrl() }}" rel="prev"><div id="oldnew-prev"></div></a>
+            @endif
+            </div>
+
+            <!-- Pagination Elements -->
+            @foreach ($ressources as $post)
+                <!-- "Three Dots" Separator -->
+                @if (is_string($post))
+                    <li class="disabled"><span>{{ $post }}</span></li>
+                @endif
+
+                <!-- Array Of Links -->
+                @if (is_array($post))
+                    @foreach ($post as $page => $url)
+                        @if ($page == $post->currentPage())
+                            <li class="active"><span>{{ $page }}</span></li>
+                        @else
+                            <li><a href="{{ $url }}">{{ $page }}</a></li>
+                        @endif
+                    @endforeach
+                @endif
+            @endforeach
+
+            <!-- Next Page Link -->
+            <div class="wrapper-oldnew-next">
+                @if ($ressources->hasMorePages())
+                    <a href="{{ $ressources->nextPageUrl() }}" rel="next"><div id="oldnew-next"></div></a>
+                @else
+                    <div class="disabled" id="oldnew-next"></div>
+                @endif
+            </div>
+
+        </div>
+    </div>

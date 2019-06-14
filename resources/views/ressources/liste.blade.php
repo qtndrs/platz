@@ -2,6 +2,9 @@
 	resources/views/ressources/liste.blade.php
 	 --}}
 
+
+
+
 @foreach ($ressources as $ressource)
 <figure class="white">
 <a href="{{route('ressource', ['id' => $ressource->id])}}">
