@@ -22,6 +22,7 @@ Liste des ressources
 					 		@include('ressources.liste')
 			</section>
 
+
 	</div>
 	</div>
 

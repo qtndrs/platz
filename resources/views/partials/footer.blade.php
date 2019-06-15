@@ -24,11 +24,10 @@
 
 
 			<div id="main_tip_newsletter">
-				{{--	--}}
 
-					<form method="post" action="{{url('/')}}">
+					<form id="form" method="post" action="{{url('/newsletter')}}">
 						@csrf
-					<input type="text" name="email" id="tip_newsletter_input" list="newsletter" autocomplete=off required>
+					<input type="email" name="email" id="tip_newsletter_input" list="newsletter" autocomplete=off required>
 				</form>
 			</div>
 					</div>
