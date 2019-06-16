@@ -17,9 +17,8 @@
 
          public function show($id){
             $ressource = RessourcesMdl::find($id);
-            $commentaires = $ressource->commentaire('created_at', 'DESC');
+            $commentaires = $ressource->commentaire;
             return View::make('ressources.show', compact ('ressource', 'commentaires'));
          }
-
 
        }

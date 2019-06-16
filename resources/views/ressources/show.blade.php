@@ -66,7 +66,7 @@ Détails de la ressource {{$ressource -> titre}}
 	<div id="liste" class="collection">
 		<?php foreach ($ressource->commentaire as $commentaire): ?>
 			<div class="post-reply">
-					<div class="image-reply-post"></div>
+					 <div class="image-reply-post" style="background: url({{ Voyager::image( $commentaire->user->avatar ) }}) no-repeat; background-size: 100%; "></div>
 					<div class="name-reply-post">{{$commentaire->user->name}}</div>
 					<div class="text-reply-post">{{$commentaire->texte}}</div>
 			</div>

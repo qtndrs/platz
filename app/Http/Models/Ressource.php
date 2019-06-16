@@ -19,6 +19,6 @@
         return $this->belongsTo('App\Http\Models\Categorie', 'categorie_id');
        }
        public function commentaire(){
-        return $this->hasMany('App\Http\Models\Commentaire');
+        return $this->hasMany('App\Http\Models\Commentaire')->orderBy('created_At', 'desc');
       }
   }
