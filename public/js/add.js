@@ -13,7 +13,7 @@
                       success: function(user){
 
                           var code = "<div class=\"post-reply\">\n\
-                              					<div class=\"image-reply-post\"></div>\n\
+                              					<div class=\"image-reply-post\" style=\"background: \"url({{ Voyager::image( $commentaire->user->avatar )\" }}) no-repeat; background-size: 100%; \"></div>\n\
                               				  <div class=\"name-reply-post\">"+user['name']+"</div>\n\
                               					<div class=\"text-reply-post\">"+$('#body').val()+"</div>\n\
                                 			</div>";

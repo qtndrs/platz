@@ -8,7 +8,7 @@
 
        class RessourceController extends Controller {
          public function index(Request $request){
-            $ressources = RessourcesMdl::orderBy('created_At', 'DESC')->simplePaginate(4);
+            $ressources = RessourcesMdl::orderBy('created_At', 'DESC')->simplePaginate(20);
             if ($request->ajax()) {
              return View::make('ressources.liste', compact ('ressources'));
         }

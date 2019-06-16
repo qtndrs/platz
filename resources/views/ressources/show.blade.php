@@ -10,7 +10,28 @@ Détails de la ressource {{$ressource -> titre}}
 
 @stop
 
+@section('css')
+<style>
+.button {
+	background-color: #666;
+	border-radius: 3px;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+}
+.button:hover {
+	 background-color: black;
+}
+</style>
+@stop
+
 @section ('content')
+
 <!-- PORTFOLIO -->
 <div class="title-item">
 	<div class="title-icon"></div>
@@ -19,7 +40,7 @@ Détails de la ressource {{$ressource -> titre}}
 </div>
 <div class="work">
 <figure class="white">
-<img src="{{ asset('storage/' . $ressource->image) }}" alt=""/></figure>
+<img src="{{ asset('storage/' . $ressource->image) }}" alt="" style="width: 712.42px; height: 534.31px;"/></figure>
 
 			<!-- Aside -->
 <div class="wrapper-text-description">
@@ -41,7 +62,7 @@ Détails de la ressource {{$ressource -> titre}}
 
 		<div class="wrapper-download">
 			<div class="icon-download"><img src="{{ asset('img/icon-download.svg') }}" alt="" width="19" height="26"/></div>
-				<div class="text-download"><a href="#"  ><b>Download</b></a></div>
+				<div class="text-download"><a href="{{ URL::to( '/public/' . $ressource->file)  }}" target="_blank">Download</a></div>
 		</div>
 									<!-- more from categorie -->
 		<div class="wrapper-morefrom">
@@ -86,24 +107,4 @@ Détails de la ressource {{$ressource -> titre}}
 	<?php endif; ?>
 
 
-@stop
-
-@section('css')
-<style>
-.button {
-	background-color: #666;
-	border-radius: 3px;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	font-family: Helvetica, sans-serif;
-}
-.button:hover {
-	 background-color: black;
-}
-</style>
 @stop

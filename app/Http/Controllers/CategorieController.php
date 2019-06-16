@@ -15,7 +15,7 @@
 
          public function show($id, Request $request){
             $categorie = CategoriesMdl::find($id);
-             $ressources = $categorie->ressource()->simplePaginate(4);
+             $ressources = $categorie->ressource()->simplePaginate(8);
           if ($request->ajax()) {
                    return View::make('ressources.liste', compact ( 'ressources'));
            }
