@@ -22,6 +22,8 @@
 	<script type="text/javascript" src="{{asset('js/jquery.animate-shadow-min.js')}}"></script>
 	<!-- pagination -->
 <script type="text/javascript" src="{{asset('js/paginator.js')}}"></script>
+<!-- newsletter -->
+<script type="text/javascript" src="{{asset('js/newsletter.js')}}"></script>
 
 	@yield('script')
 
@@ -30,18 +32,10 @@
 	@else
 	<script src="{{asset('js/show.js')}}"></script>
 	@endif
-	<script type="text/javascript">
+	<script >
 	$.ajaxSetup({
 	    headers: {
 	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	    }
 	});
 	</script>
-
-							<!-- newsletter msg  -->
-								@if (\Session::has('success'))
-								<script> toastr.success("{{ Session::get('success') }}");</script>
-								@endif
-								@if (\Session::has('failure'))
-								<script> toastr.error("{{ Session::get('failure') }}");</script>
-								@endif

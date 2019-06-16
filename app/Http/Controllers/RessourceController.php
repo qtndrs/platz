@@ -10,9 +10,8 @@
          public function index(Request $request){
             $ressources = RessourcesMdl::simplePaginate(6);
             if ($request->ajax()) {
-            return view('ressources.liste', ['ressources' => $ressources])->render();
+             return View::make('ressources.liste', compact ('ressources'));
         }
-
             return View::make('ressources.index', compact ('ressources'));
          }
 

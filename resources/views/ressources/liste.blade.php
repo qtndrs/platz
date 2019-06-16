@@ -24,5 +24,4 @@
 @endforeach
 
 
-
-	{{ $ressources->links('partials.paginator', ['ressources'=>$ressources]) }}
+				{{ $ressources->links('partials.paginator', ['ressources'=>$ressources]) }}

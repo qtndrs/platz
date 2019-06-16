@@ -3,9 +3,27 @@
  */
 
 
- $('#tip_newsletter_input').on("keydown", function(e){
-    // 13 is the key code for the Enter key
-    if(e.keyCode === 13){
-        e.preventDefault();
-    }
+ $(function(){
+
+  $(document).on("submit", '#form', function(e){
+      e.preventDefault();
+       $.ajax({
+            url:$('#form').attr('action'),
+            data: {
+              email: $('#tip_newsletter_input').val(),
+            },
+              method: 'post',
+              success: function(num){
+                if (num === '1') {
+                   toastr.success("Votre email  a été enregistré");
+              } else {
+                toastr.error("Votre email est déjà enregistré ");
+              }
+      }
+  });
+  });
+
+
+
+
 });
