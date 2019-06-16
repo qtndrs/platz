@@ -13,7 +13,7 @@
 	<img src="{{ asset('storage/' . $ressource->image) }}" />
 	<dl>
 		<dt>{{ $ressource -> titre }}</dt>
-		<dd>{{ $ressource -> texteLead }}</dd>
+		<dd>{!! $ressource -> texteLead !!}</dd>
 	</dl>
 </a>
 	<div id="wrapper-part-info">

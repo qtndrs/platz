@@ -36,7 +36,7 @@ Détails de la ressource {{$ressource -> titre}}
 
 		<div class="wrapper-desc">
 			<div class="icon-desc"><img src="{{ asset('img/icon-desc.svg') }}" alt="" width="24" height="24"/></div>
-				<div class="text-desc">{{ $ressource -> texteSuite }}</div>
+				<div class="text-desc">{!! $ressource -> texteSuite !!}</div>
 		</div>
 
 		<div class="wrapper-download">
