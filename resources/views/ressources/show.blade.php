@@ -10,6 +10,26 @@ Détails de la ressource {{$ressource -> titre}}
 
 @stop
 
+@section('css')
+<style>
+.button {
+	background-color: #666;
+	border-radius: 3px;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+}
+.button:hover {
+	 background-color: black;
+}
+</style>
+@stop
+
 @section ('content')
 <!-- PORTFOLIO -->
 <div class="title-item">
@@ -19,7 +39,7 @@ Détails de la ressource {{$ressource -> titre}}
 </div>
 <div class="work">
 <figure class="white">
-<img src="{{ asset('storage/' . $ressource->image) }}" alt=""/></figure>
+<img src="{{ asset('storage/' . $ressource->image) }}" alt="" style="width: 712.42px; height: 534.31px;"/></figure>
 
 			<!-- Aside -->
 <div class="wrapper-text-description">
@@ -86,24 +106,4 @@ Détails de la ressource {{$ressource -> titre}}
 	<?php endif; ?>
 
 
-@stop
-
-@section('css')
-<style>
-.button {
-	background-color: #666;
-	border-radius: 3px;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	font-family: Helvetica, sans-serif;
-}
-.button:hover {
-	 background-color: black;
-}
-</style>
 @stop

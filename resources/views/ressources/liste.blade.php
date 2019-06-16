@@ -10,7 +10,7 @@
 @foreach ($ressources as $ressource)
 <figure class="white">
 <a href="{{route('ressource', ['id' => $ressource->id])}}">
-	<img src="{{ asset('storage/' . $ressource->image) }}"/>
+	<img src="{{ asset('storage/' . $ressource->image) }}" style="width: 243px; height: 182.250px;"/>
 	<dl>
 		<dt>{{ $ressource -> titre }}</dt>
 		<dd>{!! $ressource -> texteLead !!}</dd>
