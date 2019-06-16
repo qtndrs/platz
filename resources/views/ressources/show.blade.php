@@ -19,7 +19,7 @@ Détails de la ressource {{$ressource -> titre}}
 </div>
 <div class="work">
 <figure class="white">
-<img src="{{ asset('img/' . $ressource->image) }}" alt=""/></figure>
+<img src="{{ asset('storage/' . $ressource->image) }}" alt=""/></figure>
 
 			<!-- Aside -->
 <div class="wrapper-text-description">
