@@ -6,7 +6,7 @@
 
 @section('titre')
 
-Liste des ressources
+Accueil
 
 @stop
 

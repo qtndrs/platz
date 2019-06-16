@@ -1,5 +1,7 @@
 @extends('templates.homepage')
 
+@section('titre', 'Reset')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

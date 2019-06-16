@@ -1,5 +1,7 @@
 @extends('templates.homepage')
 
+@section('titre', 'Email')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

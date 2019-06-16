@@ -6,7 +6,7 @@
 
 	 @section('titre')
 
-	 Liste des ressources de la categorie {{$categorie->nom}}
+	 Liste des ressources de la catégorie {{$categorie->nom}}
 
 	 @stop
 

@@ -4,12 +4,18 @@
 
 @extends('templates.homepage')
 
+@section('titre')
+
+Détails de la ressource {{$ressource -> titre}}
+
+@stop
+
 @section ('content')
 <!-- PORTFOLIO -->
 <div class="title-item">
 	<div class="title-icon"></div>
 		<div class="title-text">{{ $ressource -> titre }} </div>
-		<div class="title-text-2">{{ $ressource -> created_at }} by {{$ressource->user->name}}</div> {{-- voir le user comment le recuperer--}}
+		<div class="title-text-2">{{ $ressource -> created_at }} by {{$ressource->user->name}}</div>
 </div>
 <div class="work">
 <figure class="white">
