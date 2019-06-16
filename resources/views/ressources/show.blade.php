@@ -71,11 +71,33 @@
 	<?php else: ?>
 		<div class="post-send">
                      <div id="main-post-send">
-                         Vous devez être connecté pour pouvoir poster un commentaire. <a href="{{ route('login')}}" style="color:#007bff;">Login</a><a href="{{ route('register')}}" style="color:#007bff;">Register</a>
+                         <div id="title-post-send">Vous devez être connecté pour poster un commentaire.</div>
+													 <a href="{{route('login')}}" class="button">Sign in</a>
+													 <a href="{{route('register')}}" class="button">Sign up</a>
                      </div>
                  </div>
              </div>
 	<?php endif; ?>
-</div>
 
+
+@stop
+
+@section('css')
+<style>
+.button {
+	background-color: #666;
+	border-radius: 3px;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+}
+.button:hover {
+	 background-color: black;
+}
+</style>
 @stop

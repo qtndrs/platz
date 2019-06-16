@@ -33,30 +33,22 @@
 					</div>
 
 	</div>
+
+
 </div>
 
-<div id="administration">
-	<a href="{{route('voyager.login')}}">
-Administration
-	</a>
-</div>
-
-<style media="screen">
-	#administration {
-		text-align: center;
-	}
-	#administration a {
-		font-size: 20px; height: 40px; line-height: 40px;	opacity: 0.5;	cursor: pointer; color: #666;	opacity: 1;
-	}
-	#administration a:hover {
-		color: red;
-	}
-
-</style>
 
 <div id="wrapper-copyright">
+
 <div class="copyright">
 		<div class="copy-text object">Copyright © 2016. Template by <a style="color:#D0D1D4;" href="https://dcrazed.com/">Dcrazed</a></div>
+
+		<div id="administration">
+			<a href="{{route('voyager.login')}}">
+		Administration
+			</a>
+		</div>
+
 
 	<div class="wrapper-navbouton">
 			<div class="google object">g</div>
@@ -66,3 +58,29 @@ Administration
 		</div>
 	</div>
 </div>
+
+<style>
+	#administration {
+		width: auto;
+		position:absolute;
+		height:100%;
+		left: 47%;
+	}
+
+	#administration a {
+		font-family: Helvetica, sans-serif;
+		text-align:center;
+	  font-size: 15px;
+		height:70px;
+		line-height:70px;
+		opacity:0.5;
+		cursor:pointer;
+		color:#666;
+		opacity:1;
+	}
+
+	#administration a:hover {
+		color: white;
+	}
+
+</style>
