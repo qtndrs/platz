@@ -5,6 +5,7 @@
        use Illuminate\Support\Facades\View;
        use Illuminate\Pagination\Paginator;
        use Illuminate\Http\Request;
+       use Illuminate\Support\Facades\Storage;
 
        class RessourceController extends Controller {
          public function index(Request $request){
@@ -17,8 +18,12 @@
 
          public function show($id){
             $ressource = RessourcesMdl::find($id);
+            $file= $ressource->file;
+            $file = explode('"', $file);
+            $filelink=$file[3];
+            $filename=$file[7];
             $commentaires = $ressource->commentaire;
-            return View::make('ressources.show', compact ('ressource', 'commentaires'));
+            return View::make('ressources.show', compact ('ressource', 'commentaires', 'filelink', 'filename'));
          }
 
        }
