@@ -42,6 +42,7 @@ Détails de la ressource {{$ressource -> titre}}
 <figure class="white">
 <img src="{{ asset('storage/' . $ressource->image) }}" alt="" style="width: 712.42px; height: 534.31px;"/></figure>
 
+
 			<!-- Aside -->
 <div class="wrapper-text-description">
 
@@ -62,7 +63,7 @@ Détails de la ressource {{$ressource -> titre}}
 
 		<div class="wrapper-download">
 			<div class="icon-download"><img src="{{ asset('img/icon-download.svg') }}" alt="" width="19" height="26"/></div>
-				<div class="text-download"><a href="{{ URL::to( '/public/' . $ressource->file)  }}" target="_blank">Download</a></div>
+				<div class="text-download"><a href="{{ asset('storage/' . $filelink) }} " download="{{$filename}}"> <b>Download </b></a></div>
 		</div>
 									<!-- more from categorie -->
 		<div class="wrapper-morefrom">
