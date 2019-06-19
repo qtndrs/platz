@@ -1,3 +1,7 @@
+{{--
+	resources/views/auth/passwords/email.blade.php
+	 --}}
+
 @extends('templates.homepage')
 
 @section('titre', 'Email')

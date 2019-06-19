@@ -8,6 +8,11 @@ use Newsletter;
 class NewsletterController extends Controller
 {
 
+/**
+ * [store description]
+ * @param  Request $request [description]
+ * @return int           [description]
+ */
     public function store(Request $request)
     {
      if ( ! Newsletter::isSubscribed($request->email) )

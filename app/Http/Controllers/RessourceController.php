@@ -8,6 +8,11 @@
        use Illuminate\Support\Facades\Storage;
 
        class RessourceController extends Controller {
+         /**
+          * [index description]
+          * @param  Request $request [description]
+          * @return array           [description]
+          */
          public function index(Request $request){
             $ressources = RessourcesMdl::orderBy('created_At', 'DESC')->simplePaginate(20);
             if ($request->ajax()) {
@@ -16,6 +21,11 @@
             return View::make('ressources.index', compact ('ressources'));
          }
 
+         /**
+          * [show description]
+          * @param  [type] $id [description]
+          * @return array    [description]
+          */
          public function show($id){
             $ressource = RessourcesMdl::find($id);
             $file= $ressource->file;

@@ -1,3 +1,7 @@
+{{--
+	resources/views/auth/passwords/reset.blade.php
+	 --}}
+
 @extends('templates.homepage')
 
 @section('titre', 'Reset')

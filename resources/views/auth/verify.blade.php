@@ -1,3 +1,7 @@
+{{--
+	resources/views/auth/verify.blade.php
+	 --}}
+
 @extends('layouts.app')
 
 @section('titre', 'Verify')

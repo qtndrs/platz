@@ -11,13 +11,19 @@
 |
 */
 
+// Users
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
+// Liste des catégories
 View::composer('categories.index', function( $view){
   $view->with('categories', App\Http\Models\Categorie::all());
 });
 
+// Ressources liées
 View::composer('ressources.indexByCategorie', function( $view){
       $currentRoute = Route::current();
       $id = $currentRoute->parameters()['id'];
@@ -29,13 +35,17 @@ View::composer('ressources.indexByCategorie', function( $view){
                   ->get());
   });
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
+// Commentaires
 Route::get('ressources/add/comment', 'CommentaireController@addComment')->name('addComment');
+
+// Liste des ressources
 Route::get('/', 'RessourceController@index')->name('templates.homepage');
+
+// Détails d'une ressource
 Route::get('ressources/{id}', 'RessourceController@show')->name('ressource');
+
+// Détails d'une catégorie
 Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');
 
+// Newsletter
 Route::post('/newsletter','NewsletterController@store');

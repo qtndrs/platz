@@ -8,6 +8,10 @@ use App\User;
 
 class CommentaireController extends Controller{
 
+/**
+ * [addComment description]
+ * @param Request $request [description]
+ */
   public function addComment(Request $request){
       $commentaire = new CommentairesMdl;
       $commentaire->texte = $request->input('body');
