@@ -49,3 +49,6 @@ Route::get('categorie/{id}', 'CategorieController@show')->name('categorie');
 
 // Newsletter
 Route::post('/newsletter','NewsletterController@store');
+
+// Profil
+Route::get('profile/{id}', 'ProfileController@show')->name('profile')->middleware('auth');
