@@ -16,7 +16,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
     ];
 
     /**
@@ -45,4 +45,6 @@ class User extends \TCG\Voyager\Models\User
    {
        return $this->hasMany('App\Http\Models\Commentaire');
    }
+
+
 }

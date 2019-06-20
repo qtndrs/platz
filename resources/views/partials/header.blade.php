@@ -22,8 +22,11 @@
 	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
 	@elseif(Route::currentRouteName() == 'paginate')
 	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
+	@elseif(Route::currentRouteName() == 'pofile')
+	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
 	@else
 	<link href="{{URL::asset('show.css')}}" rel="stylesheet">
+
 	@endif
 	<style media="screen">
 		#sign {
