@@ -22,8 +22,11 @@
 	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
 	@elseif(Route::currentRouteName() == 'paginate')
 	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
+	@elseif(Route::currentRouteName() == 'pofile')
+	<link href="{{URL::asset('style.css')}}" rel="stylesheet">
 	@else
 	<link href="{{URL::asset('show.css')}}" rel="stylesheet">
+
 	@endif
 	<style media="screen">
 		#sign {
@@ -63,7 +66,7 @@
 
 <div id="sign">
 	<?php if (Auth::check()): ?>
-		<a class="log" href="{{route('logout')}}">My Profile</a>
+		<a class="log" href="{{route('profile')}}">My Profile</a>
 		<a class="log" href="{{route('logout')}}">Logout</a>
 	<?php else: ?>
 		<a class="log" href="{{route('login')}}">Sign In</a>

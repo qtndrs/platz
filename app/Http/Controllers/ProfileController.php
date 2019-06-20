@@ -20,10 +20,11 @@ class ProfileController extends Controller
      * Display the specified resource.
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         return view('profile.show');
     }
+
     public function update_avatar(Request $request){
 
             $request->validate([
