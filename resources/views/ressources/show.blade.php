@@ -63,7 +63,7 @@ Détails de la ressource {{$ressource -> titre}}
 
 		<div class="wrapper-download">
 			<div class="icon-download"><img src="{{ asset('img/icon-download.svg') }}" alt="" width="19" height="26"/></div>
-				<div class="text-download"><a href="{{ asset('storage/' . $filelink) }} " download="{{$filename}}"> <b>Download </b></a></div>
+				<div class="text-download"><a href="{{ asset('storage/' . $ressource->file) }} " download="{{$ressource->file}}"> <b>Download </b></a></div>
 		</div>
 									<!-- more from categorie -->
 		<div class="wrapper-morefrom">

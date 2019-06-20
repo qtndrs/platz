@@ -305,10 +305,10 @@ $(document).on('touchend mouseout', '#logo', function(event){
 
 
 
-/*FORMULAIRE NEWSLETTER*/
+/*FORMULAIRE NEWSLETTEr
 
 $("form").on("submit", function(event) {
 event.preventDefault();
 $.post("/burstfly/form-burstfly-modified.asp",$("form").serialize(), function(data) {//alert(data);
 });
-});
+});*/

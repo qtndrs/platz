@@ -28,12 +28,8 @@
           */
          public function show($id){
             $ressource = RessourcesMdl::find($id);
-            $file= $ressource->file;
-            $file = explode('"', $file);
-            $filelink=$file[3];
-            $filename=$file[7];
             $commentaires = $ressource->commentaire;
-            return View::make('ressources.show', compact ('ressource', 'commentaires', 'filelink', 'filename'));
+            return View::make('ressources.show', compact ('ressource', 'commentaires'));
          }
 
        }

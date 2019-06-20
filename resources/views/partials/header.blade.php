@@ -63,6 +63,7 @@
 
 <div id="sign">
 	<?php if (Auth::check()): ?>
+		<a class="log" href="{{route('logout')}}">My Profile</a>
 		<a class="log" href="{{route('logout')}}">Logout</a>
 	<?php else: ?>
 		<a class="log" href="{{route('login')}}">Sign In</a>
